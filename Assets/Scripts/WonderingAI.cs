@@ -34,9 +34,11 @@ public class WonderingAI : MonoBehaviour {
 		if (state == State.Wondering && inSight) {
 			// Debug.Log ("player discovered!");
 			state = State.Seeking;
+			agent.autoBraking = false;
 		} else if (!inSight && state == State.Seeking){
 			// Debug.Log ("Setting state to wondering");
 			state = State.Wondering;
+			agent.autoBraking = true;
 		}
 
 		// AI behaves according to its current state
@@ -48,6 +50,15 @@ public class WonderingAI : MonoBehaviour {
 			break;
 		case State.Seeking:
 			agent.destination = target.position;
+			float dist = Vector3.Magnitude (target.position - agent.transform.position);
+			Debug.Log (dist);
+			if (dist <= 1.4f) {
+				RelativeMovement r;
+				if ((r = target.GetComponent<RelativeMovement> ())) {
+					Debug.Log ("Player Catched");
+					r.PlayerCatched ();
+				}
+			}
 			break;
 		case State.Alerted:
 			
@@ -59,6 +70,16 @@ public class WonderingAI : MonoBehaviour {
 			break;
 		}
 
+	}
+		
+	void OnTriggerEnter(Collider hit) {
+		// The collider is player
+		Debug.Log(hit.name);
+		RelativeMovement r;
+		if ((r = hit.GetComponent<RelativeMovement> ())) {
+			Debug.Log ("Player Catched");
+			r.PlayerCatched ();
+		}
 	}
 		
 

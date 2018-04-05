@@ -93,14 +93,18 @@ public class RelativeMovement : MonoBehaviour {
 		charController.Move (movement);
 	}
 
+	public void PlayerCatched() {
+		Debug.Log ("Player caught by the Ghost!");
+		canMove = false;
+		animator.SetFloat ("Speed", 0);
+		Messenger.Broadcast (GameEvent.PLAYER_CATCHED);
+	}
+
 	void OnControllerColliderHit( ControllerColliderHit hit) {
 		contact = hit;
 		// The collider is enemy
 		if (contact.collider.GetComponent<WonderingAI> ()) {
-			Debug.Log ("Player caught by the Ghost!");
-			canMove = false;
-			animator.SetFloat ("Speed", 0);
-			Messenger.Broadcast (GameEvent.PLAYER_CATCHED);
+			PlayerCatched();
 		}
 		// The collider is item
 		Collectable collectable;

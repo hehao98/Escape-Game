@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 66893632}
   - component: {fileID: 66893636}
   - component: {fileID: 66893637}
+  - component: {fileID: 66893638}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -260,7 +261,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &66893634
 MeshFilter:
@@ -318,7 +319,7 @@ NavMeshAgent:
   m_Radius: 0.5
   m_Speed: 5
   m_Acceleration: 12
-  avoidancePriority: 50
+  avoidancePriority: 0
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -327,7 +328,22 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
+--- !u!54 &66893638
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 66893631}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &100203381
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +471,21 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &101740610
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101740605}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &139299012
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +510,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 139299012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 131.5, z: 0}
+  m_LocalPosition: {x: 0, y: 123, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1945588685}
@@ -538,7 +569,6 @@ GameObject:
   m_Component:
   - component: {fileID: 144634760}
   - component: {fileID: 144634763}
-  - component: {fileID: 144634762}
   - component: {fileID: 144634761}
   m_Layer: 0
   m_Name: LeftEye
@@ -594,18 +624,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &144634762
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 144634759}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &144634763
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -626,6 +644,7 @@ GameObject:
   - component: {fileID: 186216541}
   - component: {fileID: 186216540}
   - component: {fileID: 186216539}
+  - component: {fileID: 186216545}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -653,7 +672,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &186216540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,6 +766,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!54 &186216545
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 186216538}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &222942784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1435,7 @@ GameObject:
   - component: {fileID: 476772339}
   - component: {fileID: 476772338}
   - component: {fileID: 476772337}
+  - component: {fileID: 476772343}
   m_Layer: 0
   m_Name: Enemy (3)
   m_TagString: Untagged
@@ -1428,7 +1463,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &476772338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,6 +1558,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -123.44501, z: 0}
+--- !u!54 &476772343
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 476772336}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &480798013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1754,7 @@ GameObject:
   - component: {fileID: 516877837}
   - component: {fileID: 516877836}
   - component: {fileID: 516877835}
+  - component: {fileID: 516877841}
   m_Layer: 0
   m_Name: Enemy (2)
   m_TagString: Untagged
@@ -1731,7 +1782,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &516877836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,6 +1877,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -123.44501, z: 0}
+--- !u!54 &516877841
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 516877834}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &526437340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,7 +1997,6 @@ GameObject:
   m_Component:
   - component: {fileID: 593399493}
   - component: {fileID: 593399496}
-  - component: {fileID: 593399495}
   - component: {fileID: 593399494}
   m_Layer: 0
   m_Name: RightEye
@@ -1987,18 +2052,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &593399495
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 593399492}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &593399496
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2306,7 +2359,6 @@ GameObject:
   m_Component:
   - component: {fileID: 675622261}
   - component: {fileID: 675622264}
-  - component: {fileID: 675622263}
   - component: {fileID: 675622262}
   m_Layer: 0
   m_Name: LeftEye
@@ -2362,18 +2414,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &675622263
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 675622260}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &675622264
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2971,7 +3011,6 @@ GameObject:
   m_Component:
   - component: {fileID: 850538354}
   - component: {fileID: 850538357}
-  - component: {fileID: 850538356}
   - component: {fileID: 850538355}
   m_Layer: 0
   m_Name: LeftEye
@@ -3027,18 +3066,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &850538356
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 850538353}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &850538357
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3139,7 +3166,6 @@ GameObject:
   m_Component:
   - component: {fileID: 898704962}
   - component: {fileID: 898704965}
-  - component: {fileID: 898704964}
   - component: {fileID: 898704963}
   m_Layer: 0
   m_Name: RightEye
@@ -3195,18 +3221,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &898704964
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 898704961}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &898704965
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3288,7 +3302,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1052729510}
   - component: {fileID: 1052729513}
-  - component: {fileID: 1052729512}
   - component: {fileID: 1052729511}
   m_Layer: 0
   m_Name: RightEye
@@ -3344,18 +3357,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1052729512
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1052729509}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1052729513
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3988,7 +3989,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 08da0146c056646cdbf103f396b1f0b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.12
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 08da0146c056646cdbf103f396b1f0b0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4149,7 +4150,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1330495226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -255.5, y: 169.5, z: 0}
+  m_LocalPosition: {x: -250, y: 161, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1945588685}
@@ -4208,7 +4209,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1357338801}
   - component: {fileID: 1357338804}
-  - component: {fileID: 1357338803}
   - component: {fileID: 1357338802}
   m_Layer: 0
   m_Name: RightEye
@@ -4264,18 +4264,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1357338803
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1357338800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1357338804
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5719,6 +5707,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1794550889 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 08da0146c056646cdbf103f396b1f0b0, type: 3}
+  m_PrefabInternal: {fileID: 1296631777}
+--- !u!195 &1794550892
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794550889}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.1286626
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.4586487
+  m_BaseOffset: 0.72932434
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1794618339
 GameObject:
   m_ObjectHideFlags: 0
@@ -5969,7 +5982,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1945588681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 371.5, y: 220.5, z: 0}
+  m_LocalPosition: {x: 366, y: 212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1330495227}
@@ -5992,7 +6005,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1951641965}
   - component: {fileID: 1951641968}
-  - component: {fileID: 1951641967}
   - component: {fileID: 1951641966}
   m_Layer: 0
   m_Name: LeftEye
@@ -6048,18 +6060,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1951641967
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1951641964}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1951641968
 MeshFilter:
   m_ObjectHideFlags: 0
