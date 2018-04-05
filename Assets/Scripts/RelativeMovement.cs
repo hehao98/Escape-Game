@@ -9,7 +9,7 @@ public class RelativeMovement : MonoBehaviour {
 
 	public float rotateSpeed = 15.0f;
 	public float moveSpeed = 6.0f;
-	public float jumpSpeed = 15.0f;
+	public float jumpSpeed = 8.0f;
 	public float gravity = -9.8f;
 	public float terminalVelocity = -10.0f;
 	public float minFall = -1.5f;
@@ -21,6 +21,8 @@ public class RelativeMovement : MonoBehaviour {
 
 	private Animator animator;
 
+	private bool canMove = true;
+
 	void Start() {
 		charController = GetComponent<CharacterController> ();
 		animator = GetComponent<Animator> ();
@@ -29,6 +31,9 @@ public class RelativeMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (!canMove)
+			return;
+		
 		Vector3 movement = Vector3.zero;
 
 		float horInput = Input.GetAxis ("Horizontal");
@@ -90,5 +95,18 @@ public class RelativeMovement : MonoBehaviour {
 
 	void OnControllerColliderHit( ControllerColliderHit hit) {
 		contact = hit;
+		// The collider is enemy
+		if (contact.collider.GetComponent<WonderingAI> ()) {
+			Debug.Log ("Player caught by the Ghost!");
+			canMove = false;
+			animator.SetFloat ("Speed", 0);
+			Messenger.Broadcast (GameEvent.PLAYER_CATCHED);
+		}
+		// The collider is item
+		Collectable collectable;
+		if ((collectable = contact.collider.GetComponent<Collectable>())!=null) {
+			Destroy (collectable.gameObject);
+			Messenger.Broadcast(GameEvent.PICKED_UP_ITEM);
+		}
 	}
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-// some code adjusted from https://www.jianshu.com/p/43148b88765f
 public class WonderingAI : MonoBehaviour {
 	public float speed = 3.0f;
 	public float obstacleRange = 2.5f;
@@ -36,7 +35,7 @@ public class WonderingAI : MonoBehaviour {
 			// Debug.Log ("player discovered!");
 			state = State.Seeking;
 		} else if (!inSight && state == State.Seeking){
-			Debug.Log ("Setting state to wondering");
+			// Debug.Log ("Setting state to wondering");
 			state = State.Wondering;
 		}
 
@@ -77,6 +76,7 @@ public class WonderingAI : MonoBehaviour {
 	}
 
 	// Determine whether the player is in sight or not
+	// some code adjusted from https://www.jianshu.com/p/43148b88765f
 	private bool InSight() {
 		Vector3 tempForward = transform.forward;
 
